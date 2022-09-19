@@ -7,8 +7,8 @@ import AppRoutes from './app.routes'
 import { AuthContext } from '../contexts/AuthContext'
 
 function Routes() {
-    const { isAuth } = useContext(AuthContext)
-    const loading = false;
+    const { isAuth, loading } = useContext(AuthContext)
+
 
     if (loading) {
         return (
