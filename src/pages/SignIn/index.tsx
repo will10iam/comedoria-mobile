@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native'
+import { AuthContext } from '../../contexts/AuthContext';
 
 export default function SignIn() {
+    const { signIn } = useContext(AuthContext);
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    function handleLogin() {
+    async function handleLogin() {
 
         if (email === '' || password === '') {
             return;
         }
 
-        console.log("EMAIL DIGITADO " + email)
+        await signIn({ email, password })
     }
+
+
 
     return (
         <View style={styles.container}>
@@ -40,8 +45,8 @@ export default function SignIn() {
                     onChangeText={setPassword}
                 />
 
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText} onPress={handleLogin}>
+                <TouchableOpacity style={styles.button} onPress={handleLogin}>
+                    <Text style={styles.buttonText} >
                         Acessar
                     </Text>
                 </TouchableOpacity>
