@@ -50,12 +50,13 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     content: {
-        width: WIDTH - 20,
-        height: HEIGHT / 2,
+        width: WIDTH - 39,
+        height: HEIGHT / 3,
         backgroundColor: '#121e22',
         borderWidth: 1,
         borderColor: '#8a8a8a',
         borderRadius: 4,
+        marginTop: 380,
     },
     option: {
         alignItems: 'flex-start',
