@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Text, TouchableOpacity, SafeAreaView, StyleSheet, TextInput, Image } from 'react-native'
+import { Text, TouchableOpacity, SafeAreaView, StyleSheet, TextInput, Image, TouchableHighlight } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 
 import { AuthContext } from '../../contexts/AuthContext';
@@ -58,6 +58,10 @@ export default function Dashboard() {
             <TouchableOpacity style={styles.button} onPress={openOrder}>
                 <Text style={styles.buttonText}>Abrir Mesa!</Text>
             </TouchableOpacity>
+
+            <TouchableOpacity onPress={signOut}>
+                <Text style={styles.logOut}>Deslogar do App</Text>
+            </TouchableOpacity>
         </SafeAreaView>
     )
 }
@@ -101,6 +105,11 @@ const styles = StyleSheet.create({
     },
     logo: {
         width: 300,
+    },
+    logOut: {
+        fontSize: 13,
+        fontStyle: 'italic',
+
     }
 
 })
