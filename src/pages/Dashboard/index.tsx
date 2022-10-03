@@ -43,7 +43,7 @@ export default function Dashboard() {
                 resizeMode='center'
             />
 
-            <Text style={styles.title}>Novo Pedido</Text>
+            <Text style={styles.title}>Novo Pedido!</Text>
 
             <TextInput
                 placeholder='Qual é o numero da mesa?'
